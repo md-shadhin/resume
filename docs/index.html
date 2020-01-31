@@ -8,7 +8,6 @@
 <style>
 .pdfobject-container {
 	width: 100%;
-	max-width: 600px;
 	height: 600px;
 	margin: 2em 0;
 }
@@ -35,7 +34,7 @@ var clickHandler = function (e){
 			navpanes: 0,
 			toolbar: 0,
 			statusbar: 0,
-			view: "FitV"
+			view: "FitH"
 		}
 	};
 	PDFObject.embed(pdfURL, "#pdf", options);
