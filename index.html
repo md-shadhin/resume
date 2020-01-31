@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Resume</title>
+
+<style>
+.pdfobject-container {
+	width: 100%;
+	max-width: 600px;
+	height: 600px;
+	margin: 2em 0;
+}
+
+.pdfobject { border: solid 1px #666; }
+</style>
+</head>
+
+<body>
+
+<p><a href="Resume_AI_Resident/Resume_AI_Resident.pdf" class="embed-link">Resume_AI_Resident.</a></p>
+
+<div id="pdf"></div>
+
+<script src="js/pdfobject.min.js"></script>
+<script>
+
+var clickHandler = function (e){
+
+	e.preventDefault();
+	var pdfURL = this.getAttribute("href");
+	var options = {
+		pdfOpenParams: {
+			navpanes: 0,
+			toolbar: 0,
+			statusbar: 0,
+			view: "FitV"
+		}
+	};
+	PDFObject.embed(pdfURL, "#pdf", options);
+
+};
+
+var a = document.querySelectorAll(".embed-link");
+
+for(var i=0; i < a.length; i++){
+	a[i].addEventListener("click", clickHandler);
+}
+
+
+</script>
+
+</body>
+</html>
